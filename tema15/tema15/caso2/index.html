@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Instituto</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="matricula.js"></script>
+</head>
+<body>
+    <div id="cuadro">
+        <h2>Instituto Isil matricula 2025-1</h2>
+        <div id="marco">
+            <label for="ciclo">Seleccione el Ciclo: </label>
+            <select name="ciclo" id="ciclo">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="Otro">6+</option>
+            </select><br><br>
+            <label for="cc">Cantidad de Cursos: </label>
+            <input type="number" name="cc" id="cc" min="0" max="8" required>
+        </div>
+        <input type="button" value="Calcular" id="btnCalcular" onclick="calcular();">
+        <input type="button" value="Limpiar" id="btnLimpiar" onclick="limpiar();">
+        <div id="resultado">
+            <h2>Importes a pagar</h2>
+            <label for="pc">Por cursos : </label>
+            <input type="number" name="pc" id="boxCursos" min="0" max="10000" disabled><br><br>
+            <label for="mat">Por matricula : </label>
+            <input type="number" name="mat" id="boxMatr" min="0" max="100" disabled><br><br>
+            <label for="tot">Total a pagar : </label>
+            <input type="number" name="tot" id="boxTotal" min="0" max="100" disabled><br><br>
+        </div>
+
+    </div>
+
+    
+</body>
+</html>

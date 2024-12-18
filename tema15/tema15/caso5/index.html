@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var i,n,dni,apellido,area,ht,ph,sueldo;
+        var rpta="S";
+        var x=0; //inicializacion de los arreglos
+        var cev=0, cef=0, cep=0;
+        
+        var arrayDni=[];
+        var arrayApellido=[];
+        var arrayArea=[];
+        var arrayHt=[];
+        var arrayPh=[];
+        
+
+        //fase de ingreso de elementos del los arreglos
+
+        while(rpta.toUpperCase()=="S"){
+            ingreso();//1era funcion ingresa elementos
+/*             console.log(arrayDni);
+            console.log(arrayApellido);
+            console.log(arrayArea);
+            console.log(arrayHt);
+            console.log(arrayPh); */
+
+            rpta=prompt("Desea continuar [S/N]");
+        }
+        //Fase de procesamiento
+        general(); //2da funcion llama a funcion evalua y muestra
+
+        //DECLARACION DE FUNCIONES
+       
+       function ingreso(){
+        //ventanas de ingreso
+        dni=prompt("Ingrese DNI "+(x+1));
+        apellido=prompt("Ingrese Apellido ");
+        area=prompt("Ingrese Area  [VENTAS | FINANZAS | PUBLICIDAD]");
+        while(area.toUpperCase()!="VENTAS" && area.toUpperCase()!="FINANZAS"  && area.toUpperCase()!="PUBLICIDAD"){
+            area=prompt("Dato errado. Ingrese Area  [VENTAS | FINANZAS | PUBLICIDAD]")
+        } 
+        ht=parseInt(prompt("Ingrese Horas trabajadas "));
+        ph=parseInt(prompt("Ingrese pago por hora ")); 
+
+        //almacenando cada elemento en cada arreglo
+        arrayDni[x]=dni;
+        arrayApellido[x]=apellido;
+        arrayArea[x]=area;
+        arrayHt[x]=ht;
+        arrayPh[x]=ph;
+        x++;       
+       }
+
+       function general(){
+        n=arrayDni.length;
+        evalua(); //contara cantidad de trabajadores por areas
+        console.log("Ventas: "+cev+" Finanzas:"+cef+" Publicidad"+cep);
+      //  muestra(); //imprimira resultados
+
+       }
+       function evalua(){
+        for(i=0;i<=n-1;i++){
+            if(arrayArea[i].toUpperCase()=="VENTAS"){cev++;}
+            else if(arrayArea[i].toUpperCase()=="FINANZAS"){cef++;}
+            else if(arrayArea[i].toUpperCase()=="PUBLICIDAD"){cep++}
+        }
+       }
+
+
+
+    </script>
+    
+</body>
+</html>
